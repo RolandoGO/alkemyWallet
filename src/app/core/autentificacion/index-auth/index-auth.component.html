@@ -1,0 +1,9 @@
+<div>
+
+    <div *ngIf="errorLogIn">
+         <app-sing-up (singUpAprobe)="errorLogIn=$event"></app-sing-up>
+    </div>
+    <div *ngIf="!errorLogIn">
+         <app-log-in (errorLogIn)="errorLogIn=$event"></app-log-in>
+    </div>
+</div>

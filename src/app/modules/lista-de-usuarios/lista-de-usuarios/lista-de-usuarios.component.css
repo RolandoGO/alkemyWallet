@@ -1,0 +1,10 @@
+table {
+  width: 100%;
+}
+
+.mat-column-name {
+  text-align: start;
+}
+.mat-column-gender {
+  text-align: start;
+}

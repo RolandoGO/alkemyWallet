@@ -1,0 +1,37 @@
+
+<main class="bodyMoneyForm">
+  <form class="example-form" [formGroup]="addMoneyForm"  name="myForm" (ngSubmit)="passingMoney()">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Monto </mat-label>
+      <input type="number" matInput placeholder="$" formControlName="money" autocomplete="off">
+      <mat-hint style="color:red; font-weight:bold" *ngIf="addMoneyForm.get('money')?.touched && addMoneyForm.get('money')?.errors?.required">Agrega un monto</mat-hint>
+      <mat-hint style="color:red; font-weight:bold" *ngIf="addMoneyForm.get('money')?.touched && addMoneyForm.get('money')?.errors?.pattern">Agrega un monto mayor a cero</mat-hint>
+
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Concepto</mat-label>
+      <input type="text" matInput placeholder="concepto" formControlName="concept" autocomplete="off">
+      <mat-hint style="color:red; font-weight:bold" *ngIf="addMoneyForm.get('concept')?.touched && addMoneyForm.get('concept')?.errors?.required">Agrega un concepto</mat-hint>
+      <mat-hint style="color:red; font-weight:bold" *ngIf="addMoneyForm.get('concept')?.touched && addMoneyForm.get('concept')?.errors?.pattern">No mas de 10 caracteres alfabeticos</mat-hint>
+
+    </mat-form-field>
+
+    
+
+    <mat-radio-group aria-label="Select an option" formControlName="moneyType">
+      <mat-radio-button style="margin-right: 2px;" value="pesos">Pesos</mat-radio-button>
+      <mat-radio-button value="dolar">Dolar</mat-radio-button>
+      <mat-hint style="color:red; font-weight:bold" *ngIf="addMoneyForm.get('gender')?.touched && addMoneyForm.get('gender')?.errors?.required">Selecciona la moneda usada</mat-hint>
+    </mat-radio-group>
+  
+    <button  style="margin-top: 10px;" type="submit"  [disabled]="!addMoneyForm.valid" mat-raised-button color="primary">Procesar</button>
+
+</form>
+
+
+
+
+</main>
+   
+    

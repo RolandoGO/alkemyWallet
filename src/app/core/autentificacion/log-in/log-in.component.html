@@ -1,0 +1,40 @@
+<main class="body-login" >
+
+    <h2>Log In page</h2>
+  
+  <div>
+      <img src="../../../../assets/user.png" alt="user Image">
+  </div>
+  
+  <form class="example-form" [formGroup]="logInForm" [ngClass]="{'singUp-theme': errorLogIn}" name="myForm">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>User Name</mat-label>
+        <input matInput placeholder="User Name" formControlName="userName" autocomplete="off">
+        <mat-hint style="color:red; font-weight:bold" *ngIf="logInForm.get('userName')?.touched && logInForm.get('userName')?.errors?.required">User Name is required</mat-hint>
+        <mat-hint style="color:red; font-weight:bold" *ngIf="logInForm.get('userName')?.touched && logInForm.get('userName')?.errors?.pattern">Nombre entre 3 y 10 letras, sin espacios</mat-hint>
+  
+      </mat-form-field>
+    
+      <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput placeholder="xxxxxx" formControlName="password" autocomplete="off">
+          <mat-hint style="color:red; font-weight:bold" *ngIf="logInForm.get('password')?.touched && logInForm.get('password')?.errors?.required">Password is required</mat-hint>
+          <mat-hint style="color:red; font-weight:bold" *ngIf="logInForm.get('userName')?.touched && logInForm.get('password')?.errors?.pattern">El password debe tener  entre 5 y 10 caracteres alfanumericos sin espacios</mat-hint>
+        </mat-form-field>
+        
+          
+        
+  
+       
+  
+        <button  style="margin-top: 10px;" (click)="userService.logIn(logInForm.value)" [disabled]="!logInForm.valid" mat-raised-button color="primary">Login</button>
+  
+       
+       <button  style="margin-top: 10px;" (click)="errorLogIn.emit(true)" mat-stroked-button color="primary">Ir a Registrarse</button>
+          
+        
+    </form>
+  
+  </main>
+  
+  

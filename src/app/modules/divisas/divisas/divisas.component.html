@@ -1,0 +1,41 @@
+
+<main class="body-addMoney">
+    <h3>
+        Cuenta en dolares: $ {{dolar}}
+    </h3>
+    <h3>
+        Cuenta en pesos: $ {{pesos}}
+    </h3>
+     
+    <div class="dolarExchangeDisplay border border-3">
+        <h2>Valor del Dolar</h2>
+        <h3>Compra: {{dolarData?.buy}}</h3>
+        <h3>Venta: {{dolarData?.sell}} </h3>
+    </div>
+
+    <div class="compraVenta ">
+        <form class="example-form" [formGroup]="moneyInputFiled"  name="myForm">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Monto </mat-label>
+              <input type="number" matInput placeholder="$" formControlName="money" autocomplete="off">
+              <mat-hint style="color:red; font-weight:bold" *ngIf="moneyInputFiled.get('money')?.touched && moneyInputFiled.get('money')?.errors?.required">Agrega un monto</mat-hint>
+              <mat-hint style="color:red; font-weight:bold" *ngIf="moneyInputFiled.get('money')?.touched && moneyInputFiled.get('money')?.errors?.pattern">Agrega un monto mayor a cero</mat-hint>
+        
+            </mat-form-field>
+        
+            
+        
+            <div class="compraVenta">
+                <button  style="margin-top: 10px;" (click)="dolarTransaction('buy')" [disabled]="!moneyInputFiled.valid" mat-raised-button color="primary">Comprar</button>
+                <button  style="margin-top: 10px;" (click)="dolarTransaction('sell')" [disabled]="!moneyInputFiled.valid"  mat-raised-button color="primary">Vender</button>
+            
+            </div>
+        
+        </form>
+        
+        
+
+
+    </div>
+</main>
+    

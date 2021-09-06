@@ -1,0 +1,46 @@
+<main class="body-login" >
+
+    <h2>sing Up Page</h2>
+        
+        
+        <form class="example-form" [formGroup]="singUpForm"  name="myForm">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>User Name</mat-label>
+              <input matInput placeholder="User Name" formControlName="userName" autocomplete="off">
+              <mat-hint style="color:red; font-weight:bold" *ngIf="singUpForm.get('userName')?.touched && singUpForm.get('userName')?.errors?.required">User Name is required</mat-hint>
+              <mat-hint style="color:red; font-weight:bold" *ngIf="singUpForm.get('userName')?.touched && singUpForm.get('userName')?.errors?.pattern">Nombre entre 3 y 10 letras</mat-hint>
+        
+            </mat-form-field>
+          
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Password</mat-label>
+                <input type="password" matInput placeholder="xxxxxx" formControlName="password" autocomplete="off">
+                <mat-hint style="color:red; font-weight:bold" *ngIf="singUpForm.get('password')?.touched && singUpForm.get('password')?.errors?.required">Password is required</mat-hint>
+                <mat-hint style="color:red; font-weight:bold" *ngIf="singUpForm.get('userName')?.touched && singUpForm.get('password')?.errors?.pattern">El password debe tener  entre 5 y 10 caracteres alfanumericos</mat-hint>
+              </mat-form-field>
+              
+                
+                  <mat-radio-group aria-label="Select an option" formControlName="gender">
+                    <mat-radio-button value="female">Female</mat-radio-button>
+                    <mat-radio-button value="male">Male</mat-radio-button>
+                    <mat-hint style="color:red; font-weight:bold" *ngIf="singUpForm.get('gender')?.touched && singUpForm.get('gender')?.errors?.required">Elegir un genero</mat-hint>
+                  </mat-radio-group>
+                  <hr>
+                  <button  mat-raised-button color="accent" [disabled]="!singUpForm.valid" (click)="handleSingUp()">Sing Up</button>
+    
+                  <button  style="margin-top: 10px;" (click)="singUpAprobe.emit(false)" mat-stroked-button color="primary">Ir  al Log In</button>
+    
+              
+          </form>
+        
+        </main>
+        
+        
+        
+             
+        
+              
+        
+             
+                
+              

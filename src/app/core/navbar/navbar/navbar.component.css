@@ -1,0 +1,11 @@
+header {
+  background-color: #e9e6e6;
+}
+.navbar-nav > li {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.navbar {
+  margin-left: 10%;
+}

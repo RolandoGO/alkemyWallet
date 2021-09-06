@@ -1,0 +1,14 @@
+<main>
+
+  <button (click)="carga = !carga" class="btn btn-sm btn-primary mt-2">navegar entre listas</button>
+
+  <div *ngIf="!carga">
+    
+    <app-gastos [data]=" withdrawalMoneyHistory "></app-gastos>
+  </div>
+
+  <div *ngIf="carga">
+    
+    <app-cargas [data]="addMoneyHistory"></app-cargas>
+  </div>
+</main>
