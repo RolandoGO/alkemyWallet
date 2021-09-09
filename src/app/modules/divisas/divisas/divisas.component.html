@@ -16,7 +16,7 @@
     <div class="compraVenta ">
         <form class="example-form" [formGroup]="moneyInputFiled"  name="myForm">
             <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>Monto </mat-label>
+              <mat-label>Dolares </mat-label>
               <input type="number" matInput placeholder="$" formControlName="money" autocomplete="off">
               <mat-hint style="color:red; font-weight:bold" *ngIf="moneyInputFiled.get('money')?.touched && moneyInputFiled.get('money')?.errors?.required">Agrega un monto</mat-hint>
               <mat-hint style="color:red; font-weight:bold" *ngIf="moneyInputFiled.get('money')?.touched && moneyInputFiled.get('money')?.errors?.pattern">Agrega un monto mayor a cero</mat-hint>

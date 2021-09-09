@@ -46,7 +46,9 @@ export class UserDataServiceService {
       this.storage.setItem("currentUser", JSON.stringify(newUserHistory))
       
     }
-    else{
+
+    
+    else {
       const newWithdrawalHistory = [ value,...withdrawalHistory]
       const newUserHistory = {...user, moneyHistory:{addMoneyHistory, withdrawalHistory:newWithdrawalHistory}}
 

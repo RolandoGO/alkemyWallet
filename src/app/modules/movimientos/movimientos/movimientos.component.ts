@@ -46,6 +46,6 @@ export interface moneyData {
   money:number;
   date: string;
   concept:string;
-  monetType:string;
+  moneyType:string;
   
 }

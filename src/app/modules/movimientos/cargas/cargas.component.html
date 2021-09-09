@@ -15,7 +15,7 @@
         </thead>
         <tbody>
           <tr *ngFor="let element of data | slice: (page-1) * pageSize : page * pageSize">
-            <th scope="row">{{element.money}}</th>
+            <th scope="row">{{element.money}} <p *ngIf="element.moneyType==='dolar'">Dolar</p><p *ngIf="element.moneyType==='pesos'">Pesos</p></th>
             <td>{{element.date}}</td>
             <td>{{element.concept}}</td>
            

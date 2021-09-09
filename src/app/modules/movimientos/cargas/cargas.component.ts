@@ -9,7 +9,7 @@ import { moneyData } from '../movimientos/movimientos.component';
 export class CargasComponent implements OnInit {
 
   public page = 1
-  public pageSize = 10
+  public pageSize = 3
 
   @Input() data: Array<moneyData>=[]
   

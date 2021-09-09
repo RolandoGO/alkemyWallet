@@ -11,10 +11,8 @@ import { AutentificacionModule } from './core/autentificacion/autentificacion.mo
 import { CargarSaldoModule } from './modules/cargar-saldo/cargar-saldo.module';
 import { DivisasModule } from './modules/divisas/divisas.module';
 import { ListaDeUsuariosModule } from './modules/lista-de-usuarios/lista-de-usuarios.module';
-import { EnviarDineroModule } from './modules/enviar-dinero/enviar-dinero.module';
 import { MovimientosModule } from './modules/movimientos/movimientos.module';
 import { PagarModule } from './modules/pagar/pagar.module';
-import { PlazoFijoModule } from './modules/plazo-fijo/plazo-fijo.module';
 import { ShareModule } from './share/share.module';
 
 
@@ -35,10 +33,8 @@ import { ShareModule } from './share/share.module';
     CargarSaldoModule,
     DivisasModule,
     ListaDeUsuariosModule,
-    EnviarDineroModule,
     MovimientosModule,
     PagarModule,
-    PlazoFijoModule,
     ShareModule,
     AutentificacionModule,
 
